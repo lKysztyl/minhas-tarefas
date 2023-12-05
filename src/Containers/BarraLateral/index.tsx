@@ -3,17 +3,15 @@ import * as S from './styles'
 
 const BarraLateral = () => (
   <S.Aside>
-    <S.Campo>
-      <input type="text" placeholder="Buscar" />
-      <S.Filtros>
-        <FiltroCard />
-        <FiltroCard />
-        <FiltroCard />
-        <FiltroCard />
-        <FiltroCard />
-        <FiltroCard ativo />
-      </S.Filtros>
-    </S.Campo>
+    <S.Campo type="text" placeholder="Buscar" />
+    <S.Filtros>
+      <FiltroCard />
+      <FiltroCard />
+      <FiltroCard />
+      <FiltroCard />
+      <FiltroCard />
+      <FiltroCard ativo />
+    </S.Filtros>
   </S.Aside>
 )
 export default BarraLateral

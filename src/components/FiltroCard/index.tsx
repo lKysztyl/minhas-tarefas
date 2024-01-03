@@ -6,6 +6,7 @@ export type Props = {
   legenda: string
 }
 
+<<<<<<< HEAD
 const FiltroCard = ({ contador, ativo, legenda }: Props) => (
   <S.Card ativo={ativo}>
     <S.Contador>{contador}</S.Contador>

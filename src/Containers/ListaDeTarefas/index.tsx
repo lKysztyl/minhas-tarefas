@@ -1,45 +1,32 @@
-import Tarefas from '../../components/Tarefa'
+import { useSelector } from 'react-redux'
+
+import Tarefa from '../../components/Tarefa'
 import { Container } from './styles'
 
-import * as enums from '../../utils/enums/Tarefa'
+import { RootReducer } from '../../store'
 
-const tarefas = [
-  {
-    titulo: 'Castelo de Vidro',
-    descricao: 'Livro de Fantasia',
-    prioridade: enums.Prioridade.IMPORTANTE,
-    status: enums.Status.PENDENTE
-  },
-  {
-    titulo: 'Duna',
-    descricao: 'Livro de Fantasia',
-    prioridade: enums.Prioridade.URGENTE,
-    status: enums.Status.CONCLUIDA
-  },
-  {
-    titulo: 'Rust',
-    descricao: 'Livro de Rust',
-    prioridade: enums.Prioridade.IMPORTANTE,
-    status: enums.Status.PENDENTE
-  }
-]
+const ListaDeTarefas = () => {
+  const { tarefas } = useSelector((state: RootReducer) => state)
 
-const ListaDeTarefas = () => (
-  <Container>
-    <p>2 tarefas marcadas como: &quot;cateforia&ldquo; e &quot;termo&ldquo;</p>
-    <ul>
-      {tarefas.map((t) => (
-        <li key={t.titulo}>
-          <Tarefas
-            descricao={t.descricao}
-            prioridade={t.prioridade}
-            status={t.status}
-            titulo={t.titulo}
-          />
-        </li>
-      ))}
-    </ul>
-  </Container>
-)
+  return (
+    <Container>
+      <p>
+        2 tarefas marcadas como: &quot;cateforia&ldquo; e &quot;termo&ldquo;
+      </p>
+      <ul>
+        {tarefas.map((t) => (
+          <li key={t.titulo}>
+            <Tarefa
+              descricao={t.descricao}
+              titulo={t.titulo}
+              status={t.status}
+              prioridade={t.prioridade}
+            />
+          </li>
+        ))}
+      </ul>
+    </Container>
+  )
+}
 
 export default ListaDeTarefas

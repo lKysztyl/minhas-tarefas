@@ -26,7 +26,7 @@ const BarraLateral = () => {
           legenda="pendentes"
         />
         <FiltroCard
-          valor={enums.Status.PENDENTE}
+          valor={enums.Status.CONCLUIDA}
           criterio="status"
           legenda="concluídas"
         />
